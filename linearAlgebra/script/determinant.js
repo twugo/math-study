@@ -1,7 +1,5 @@
-let matrix = [];
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
-
     
     // ボタンが押されたら、行列式を計算する
     const button = document.getElementById('button');
@@ -14,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 入力を取得
         const matrix_table = document.getElementById('matrix_table');
+        let matrix = [];
         let count = 0;
         const table_elems = matrix_table.childNodes;
         for(let tr of table_elems){
@@ -44,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Array.<number>} original_matrix matrix
  */
 function calc_determinant(n, original_matrix){
-    let matrix = original_matrix.concat();
+    let matrix = original_matrix.slice();
     let result = 1;
     for(let i=0; i<n; i++){
         if(matrix[i][i] == 0){
-            console.log('matrix[i][i]=' + matrix[i][i]);
             for(let r=i+1; r<n; r++){
-                if(matrix[r][i] === 0){
+                if(matrix[r][i] == 0){
                     if(r===n-1) return 0;
                     continue;
                 }
@@ -60,7 +58,7 @@ function calc_determinant(n, original_matrix){
             }
         }
         for(let r=i+1; r<n; r++){
-            if(matrix[r][i] !== 0){
+            if(matrix[r][i] != 0){
                 const tmp = matrix[r][i] / matrix[i][i];
                 for(let j=i; j<n; j++){
                     matrix[r][j] -= matrix[i][j] * tmp;
