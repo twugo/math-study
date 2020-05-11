@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  行列のサイズを入力してください:<input type="number" id="matrix_size" min=1>
+  <table border=1 id="matrix_table">
+    <tr>
+      <th></th>
+      <th>1</th>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>
+        <input type="number">
+      </td>
+    </tr>
+  </table>
+  <input type="button" value="計算" id="button">
+  <p>行列式：<div id="result"></div></p>
+  <script src="script/create_square_matrix.js"></script>
+  <script src="script/determinant.js"></script>
+</body>
+</html>
