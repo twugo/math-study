@@ -41,9 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * calculate determinant.
  * @param {number} n size of matrix
- * @param {Array.<number>} matrix matrix
+ * @param {Array.<number>} original_matrix matrix
  */
-function calc_determinant(n, matrix){
+function calc_determinant(n, original_matrix){
+    let matrix = original_matrix.concat();
     let result = 1;
     for(let i=0; i<n; i++){
         if(matrix[i][i] == 0){
