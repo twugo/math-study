@@ -43,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
  * @param {Array.<number>} original_matrix matrix
  */
 function calc_determinant(n, original_matrix){
-    let matrix = original_matrix.slice();
+    // 元の行列を壊さないため行列のコピーを作成する
+    let matrix = [];
+    for(const row of original_matrix){
+        matrix.push([...row]);
+    }
+
     let result = 1;
     for(let i=0; i<n; i++){
         if(matrix[i][i] == 0){
