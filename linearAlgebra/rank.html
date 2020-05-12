@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ランク計算</title>
+</head>
+<body>
+  <p>行列のサイズを入力してください。</p>
+  <p>行数×列数：
+    <input type="number" id="matrix_row" min=1>×
+    <input type="number" id="matrix_column" min=1>
+    <input type="button" value="作成" id="matrix_button">
+  </p>
+  <table border=1 id="matrix_table"></table>
+  <input type="button" value="計算" id="calc_button">
+  <p>rank：<div id="result"></div></p>
+  <script src="script/create_matrix.js"></script>
+  <script src="script/rank.js"></script>
+</body>
+</html>

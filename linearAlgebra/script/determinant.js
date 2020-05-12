@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
  * calculate determinant.
  * @param {number} n size of matrix
  * @param {Array.<number>} original_matrix matrix
+ * @returns {number} determinant determinant
  */
 function calc_determinant(n, original_matrix){
     // 元の行列を壊さないため行列のコピーを作成する
